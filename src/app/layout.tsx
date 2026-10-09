@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,7 +38,7 @@ export default function RootLayout({
             overflowX: "hidden",
           }}
         >
-          <PageTransition>{children}</PageTransition>
+          {children}
         </main>
         <Footer />
       </body>
