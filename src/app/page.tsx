@@ -59,12 +59,12 @@ const DATA_STREAM = [
 ];
 
 const MINI_SERVICES = [
-  { id: "collection", title: "Data Collection", icon: Database, color: "#0ea5e9" },
-  { id: "annotation", title: "Data Annotation", icon: Edit3, color: "#10b981" },
-  { id: "qa", title: "Expert Review (QA)", icon: ClipboardCheck, color: "#f59e0b" },
-  { id: "deid", title: "De-identification", icon: ShieldAlert, color: "#ef4444" },
-  { id: "synthetic", title: "Synthetic Data", icon: FlaskConical, color: "#8b5cf6" },
-  { id: "coding", title: "Medical Coding", icon: FileText, color: "#ec4899" },
+  { id: "collection", title: "Data Collection", icon: Database, desc: "Global hospital network sourcing and custom cohort generation." },
+  { id: "annotation", title: "Data Annotation", icon: Edit3, desc: "Pixel-perfect medical labeling and DICOM metadata tagging." },
+  { id: "qa", title: "Expert Review (QA)", icon: ClipboardCheck, desc: "Rigorous verification by board-certified clinicians." },
+  { id: "deid", title: "De-identification", icon: ShieldAlert, desc: "HIPAA Safe Harbor anonymization and pixel-level OCR redaction." },
+  { id: "synthetic", title: "Synthetic Data", icon: FlaskConical, desc: "Zero-PHI GAN-powered medical data generation." },
+  { id: "coding", title: "Medical Coding", icon: FileText, desc: "Automated mapping to standard ontologies like ICD-10 and SNOMED CT." },
 ];
 
 const PIPELINE_STEPS = [
@@ -303,31 +303,26 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Mini Services Showcase */}
-      <section className={styles.miniServicesWrapper}>
-        <div className={styles.miniServicesHeader}>
-          <h2>End-to-End Solutions</h2>
-          <p>We provide everything you need to build, train, and deploy clinical-grade AI.</p>
+      {/* Premium Solutions Grid */}
+      <section className={styles.premiumSolutionsWrapper}>
+        <div className={styles.premiumSolutionsHeader}>
+          <h2 className={styles.premiumSolutionsTitle}>The Complete AI Lifecycle</h2>
+          <p className={styles.premiumSolutionsSubtitle}>
+            Our infrastructure handles the entire medical data pipeline from hospital extraction to model-ready ingestion.
+          </p>
         </div>
-        <div className={styles.miniServicesGrid}>
+        <div className={styles.premiumSolutionsGrid}>
           {MINI_SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <div key={service.id} className={styles.miniServiceCard}>
-                <div 
-                  className={styles.miniServiceIconWrapper} 
-                  style={{ backgroundColor: `${service.color}15`, color: service.color }}
-                >
-                  <Icon size={24} strokeWidth={2.5} />
+              <div key={service.id} className={styles.premiumSolutionCell}>
+                <div className={styles.premiumSolutionIconWrapper}>
+                  <Icon size={26} strokeWidth={2.2} className={styles.premiumSolutionIcon} />
                 </div>
-                <h3>{service.title}</h3>
-                <Link 
-                  href={`/services#${service.id}`} 
-                  className={styles.miniServiceLink}
-                  style={{ color: service.color }}
-                >
-                  Learn more <ArrowRight size={16} />
-                </Link>
+                <div className={styles.premiumSolutionContent}>
+                  <h3>{service.title}</h3>
+                  <p>{service.desc}</p>
+                </div>
               </div>
             );
           })}
