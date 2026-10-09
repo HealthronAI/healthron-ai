@@ -21,7 +21,8 @@ export default function ContactPage() {
     setError(false);
     setSuccess(false);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       persona,
       name: formData.get("name"),
@@ -40,7 +41,7 @@ export default function ContactPage() {
 
       if (!res.ok) throw new Error("Failed to send");
       setSuccess(true);
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setError(true);
     } finally {
