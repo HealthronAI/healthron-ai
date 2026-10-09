@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- 
+    Healthron AI Logo
+    Recreated from the site's code (Lucide Activity Icon + Plus Jakarta Sans) 
+  -->
+  
+  <!-- The Activity Icon (recolored to the site's primary blue #0ea5e9) -->
+  <svg x="10" y="25" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+  </svg>
+
+  <!-- The Text "Healthron AI" -->
+  <text x="75" y="60" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="36" fill="#0F172A" letter-spacing="-0.02em">
+    Healthron AI
+  </text>
+</svg>

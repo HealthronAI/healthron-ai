@@ -1,0 +1,198 @@
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1400px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 100px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem 0 1.5rem;
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolled {
+  top: 1rem;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border-color: rgba(226, 232, 240, 0.6);
+  box-shadow:
+    0 15px 40px -10px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logoIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.logoTextWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.logoTextHealthron {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  letter-spacing: -0.04em;
+}
+
+.logoTextAi {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.4rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--foreground-muted);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.links a:hover {
+  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.active {
+  background: white !important;
+  color: var(--foreground) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttonSecondary {
+  text-decoration: none;
+  color: var(--foreground-muted);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  padding: 0 0.5rem;
+}
+
+.buttonSecondary:hover {
+  color: var(--foreground);
+}
+
+.buttonPrimary {
+  background: var(--foreground);
+  color: white;
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  background: #000;
+}
+
+.hamburger {
+  display: none;
+  color: var(--foreground);
+  padding: 0.5rem;
+  z-index: 10000;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .actions {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 5.5rem;
+    left: 5%;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9998;
+  }
+  .mobileMenu a {
+    text-decoration: none;
+    color: var(--foreground-muted);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: background 0.2s;
+  }
+  .mobileMenu a:hover {
+    background: rgba(241, 245, 249, 0.8);
+  }
+  .activeMobile {
+    background: rgba(241, 245, 249, 0.8) !important;
+    color: var(--primary) !important;
+  }
+  .mobileButtonPrimary {
+    background: var(--primary) !important;
+    color: white !important;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,231 @@
+.container {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 12rem 4rem 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Left Info Column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 12rem;
+}
+
+.infoTitle {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--foreground);
+  letter-spacing: -0.03em;
+}
+
+.infoSubtitle {
+  font-size: 1.15rem;
+  color: var(--foreground-muted);
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.trustBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--foreground-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.trustItem svg {
+  color: var(--primary);
+}
+
+.contactDirect {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contactDirect p {
+  color: var(--foreground-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactDirect strong {
+  color: var(--foreground);
+}
+
+/* Right Form Column */
+.formWrapper {
+  background: white;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border);
+}
+
+.personaToggle {
+  display: flex;
+  background: var(--background-alt);
+  padding: 0.4rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.55rem;
+  color: var(--foreground-muted);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 0.95rem;
+}
+
+.toggleBtn.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--foreground);
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--background-alt);
+  outline: none;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+}
+
+.submitBtn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(2, 132, 199, 0.35);
+}
+
+.submitBtn:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10rem 2rem 4rem;
+    gap: 3rem;
+  }
+  .infoColumn {
+    position: static;
+  }
+  .infoTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8rem 1.5rem 3rem;
+  }
+  .formWrapper {
+    padding: 2rem 1.5rem;
+  }
+  .personaToggle {
+    flex-direction: column;
+  }
+  .toggleBtn {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoTitle {
+    font-size: 2rem;
+  }
+  .infoSubtitle {
+    font-size: 1rem;
+  }
+  .formWrapper {
+    padding: 1.5rem 1rem;
+  }
+}
