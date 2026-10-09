@@ -45,7 +45,7 @@ export async function POST(req: Request) {
 
     const { data: resendData, error } = await resend.emails.send({
       from: 'Healthron AI <onboarding@resend.dev>',
-      to: ['connect@healthronai.com'], 
+      to: ['healthronai@gmail.com'], // Temporarily using Gmail until Resend verifies the custom domain 
       subject: `New ${personaTitle} Lead: ${name} from ${company}`,
       html: htmlContent,
       replyTo: email,
