@@ -9,6 +9,11 @@ import {
   TrendingUp,
   Activity,
   Lock,
+  Edit3,
+  ClipboardCheck,
+  ShieldAlert,
+  FlaskConical,
+  FileText,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
@@ -24,7 +29,7 @@ const DATA_STREAM = [
     icon: Activity,
     iconClass: styles.iconBlue,
     category: "RADIOLOGY",
-    highlight: "5.2M+ Scans",
+    highlight: "High-Volume",
     text: "High-res MRIs & CTs",
   },
   {
@@ -32,7 +37,7 @@ const DATA_STREAM = [
     icon: Lock,
     iconClass: styles.iconGreen,
     category: "ONCOLOGY",
-    highlight: "2.1M+ Slides",
+    highlight: "Clinical-Grade",
     text: "Annotated Histopathology",
   },
   {
@@ -40,7 +45,7 @@ const DATA_STREAM = [
     icon: TrendingUp,
     iconClass: styles.iconEmerald,
     category: "CARDIOLOGY",
-    highlight: "10M+ ECGs",
+    highlight: "Curated",
     text: "12-lead waveform data",
   },
   {
@@ -48,9 +53,18 @@ const DATA_STREAM = [
     icon: Database,
     iconClass: styles.iconPurple,
     category: "CLINICAL",
-    highlight: "50M+ Records",
+    highlight: "Extensive",
     text: "Longitudinal EHR timelines",
   },
+];
+
+const MINI_SERVICES = [
+  { id: "collection", title: "Data Collection", icon: Database, color: "#0ea5e9" },
+  { id: "annotation", title: "Data Annotation", icon: Edit3, color: "#10b981" },
+  { id: "qa", title: "Expert Review (QA)", icon: ClipboardCheck, color: "#f59e0b" },
+  { id: "deid", title: "De-identification", icon: ShieldAlert, color: "#ef4444" },
+  { id: "synthetic", title: "Synthetic Data", icon: FlaskConical, color: "#8b5cf6" },
+  { id: "coding", title: "Medical Coding", icon: FileText, color: "#ec4899" },
 ];
 
 const PIPELINE_STEPS = [
@@ -288,6 +302,37 @@ export default function Home() {
           })}
         </div>
       </motion.section>
+
+      {/* Mini Services Showcase */}
+      <section className={styles.miniServicesWrapper}>
+        <div className={styles.miniServicesHeader}>
+          <h2>End-to-End Solutions</h2>
+          <p>We provide everything you need to build, train, and deploy clinical-grade AI.</p>
+        </div>
+        <div className={styles.miniServicesGrid}>
+          {MINI_SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div key={service.id} className={styles.miniServiceCard}>
+                <div 
+                  className={styles.miniServiceIconWrapper} 
+                  style={{ backgroundColor: `${service.color}15`, color: service.color }}
+                >
+                  <Icon size={24} strokeWidth={2.5} />
+                </div>
+                <h3>{service.title}</h3>
+                <Link 
+                  href={`/services#${service.id}`} 
+                  className={styles.miniServiceLink}
+                  style={{ color: service.color }}
+                >
+                  Learn more <ArrowRight size={16} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* 2. Integrations Section - Dark Terminal Mode */}
       <motion.section className={styles.integrationsDarkWrapper}>

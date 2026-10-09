@@ -45,7 +45,7 @@ export default function Navbar() {
             href="/services"
             className={pathname === "/services" ? styles.active : ""}
           >
-            Services
+            Solutions
           </Link>
           <Link
             href="/developers"
@@ -95,7 +95,7 @@ export default function Navbar() {
               href="/services"
               className={pathname === "/services" ? styles.activeMobile : ""}
             >
-              Services
+              Solutions
             </Link>
             <Link
               href="/developers"

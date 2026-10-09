@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import styles from "./developers.module.css";
 
 const HERO_STATS = [
-  { id: 1, num: "50M+", label: "Clinical EHR Timelines" },
-  { id: 2, num: "10M+", label: "12-Lead ECGs" },
-  { id: 3, num: "5.2M+", label: "Radiology Scans" },
-  { id: 4, num: "2.1M+", label: "Pathology Slides" },
+  { id: 1, num: "Global", label: "Clinical EHR Timelines" },
+  { id: 2, num: "Diverse", label: "12-Lead ECGs" },
+  { id: 3, num: "Curated", label: "Radiology Scans" },
+  { id: 4, num: "Deep", label: "Pathology Slides" },
 ];
 
 const WORKFLOW_STEPS = [
